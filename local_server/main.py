@@ -24,7 +24,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
-PORT = 1506
+PORT = 8080
 
 origins = [
     f"http://localhost:{PORT}",

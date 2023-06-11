@@ -103,6 +103,24 @@ async def query_main(
         raise HTTPException(status_code=500, detail="Internal Service Error")
 
 
+# @app.post(
+#     "/shopify"
+# )
+# async def shopify_main(
+#     request: ShopifyRequest = Body(...),
+# ):
+#     try:
+#
+#
+#
+#
+#
+#
+#     except Exception as e:
+#         logger.error(e)
+#         raise HTTPException(status_code=500, detail="Internal Service Error")
+
+
 @sub_app.post(
     "/query",
     response_model=QueryResponse,
@@ -153,4 +171,4 @@ async def startup():
 
 
 def start():
-    uvicorn.run("server.main:app", host="0.0.0.0", port=1506, reload=True)
+    uvicorn.run("server/main:app", host="0.0.0.0", port=os.environ.get("PORT", 1506), reload=True)

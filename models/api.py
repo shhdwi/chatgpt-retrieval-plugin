@@ -4,7 +4,7 @@ from models.models import (
     Query,
     QueryResult,
 )
-from pydantic import BaseModel
+from pydantic import BaseModel, AnyHttpUrl
 from typing import List, Optional
 
 
@@ -22,6 +22,10 @@ class QueryRequest(BaseModel):
 
 class QueryResponse(BaseModel):
     results: List[QueryResult]
+
+
+class ShopifyRequest(BaseModel):
+    url: AnyHttpUrl
 
 
 class DeleteRequest(BaseModel):
